@@ -107,23 +107,47 @@ if (expertiseCards.length) {
   cardObserver.observe(expertiseCards[0]);
 }
 
-// --- Contact form (placeholder handler) ---
+// --- Contact form (Formspree) ---
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
     const btn = this.querySelector('button[type="submit"]');
     const original = btn.textContent;
-    btn.textContent = 'Message Sent';
-    btn.style.background = '#4A5C40';
-    btn.style.borderColor = '#4A5C40';
+    btn.textContent = 'Sending...';
     btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = original;
-      btn.style.background = '';
-      btn.style.borderColor = '';
-      btn.disabled = false;
-      contactForm.reset();
-    }, 3500);
+
+    fetch('https://formspree.io/f/maqvvylq', {
+      method: 'POST',
+      body: new FormData(contactForm),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
+        btn.textContent = 'Message Sent';
+        btn.style.background = '#4A5C40';
+        btn.style.borderColor = '#4A5C40';
+        contactForm.reset();
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.style.background = '';
+          btn.style.borderColor = '';
+          btn.disabled = false;
+        }, 3500);
+      } else {
+        btn.textContent = 'Something went wrong — please try again';
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.disabled = false;
+        }, 3500);
+      }
+    })
+    .catch(() => {
+      btn.textContent = 'Something went wrong — please try again';
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.disabled = false;
+      }, 3500);
+    });
   });
 }
