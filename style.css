@@ -452,7 +452,16 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.75;
   color: rgba(253, 250, 244, 0.75);
   max-width: 640px;
-  margin-bottom: 44px;
+  margin-bottom: 16px;
+}
+
+.hero-location {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(253, 250, 244, 0.4);
+  margin-bottom: 36px;
 }
 
 .hero-actions {
@@ -1503,6 +1512,78 @@ a { text-decoration: none; color: inherit; }
 }
 
 .footer-small { font-size: 11px !important; }
+
+.footer-nap {
+  grid-column: 1 / -1;
+  border-top: 1px solid rgba(245, 240, 232, 0.1);
+  padding-top: 24px;
+  margin-top: 8px;
+  text-align: center;
+}
+.footer-nap p {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: rgba(245, 240, 232, 0.4);
+  letter-spacing: 0.06em;
+  line-height: 1.8;
+}
+.footer-nap a {
+  color: rgba(245, 240, 232, 0.4);
+  text-decoration: none;
+}
+.footer-nap a:hover { color: var(--gold); }
+
+/* === FAQ SECTION === */
+.faq-section {
+  background: var(--cream);
+  padding: 100px 0;
+}
+.faq-grid {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.faq-item {
+  border-bottom: 1px solid var(--dust-light);
+  padding: 0;
+}
+.faq-item summary {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--earth);
+  padding: 24px 40px 24px 0;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  color: var(--gold);
+  font-weight: 300;
+  transition: transform 0.2s ease;
+}
+.faq-item[open] summary::after {
+  content: '−';
+}
+.faq-item p {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--earth-mid);
+  line-height: 1.75;
+  padding: 0 40px 24px 0;
+}
+.faq-item summary:hover { color: var(--gold-dark); }
 
 /* === SCROLL REVEAL ANIMATIONS === */
 .reveal {
