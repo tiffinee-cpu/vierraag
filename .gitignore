@@ -1,0 +1,67 @@
+# This repo publishes to stevevierraag.com via Cloudflare Pages.
+# Anything committed here becomes PUBLICLY READABLE at a guessable URL.
+#
+# The repo root doubles as a working folder holding tax forms, LLC filings,
+# and signed agreements. So the rule is inverted: ignore everything by
+# default, then allow site files back in one at a time. New files are
+# invisible to git until deliberately allowed — it fails closed.
+#
+# Adding a new page or image? Add an explicit `!` line for it below.
+
+*
+
+# This file must exempt itself — `*` above matches it too.
+!.gitignore
+
+# --- Pages ---
+!index.html
+!privacy.html
+
+# --- Assets ---
+!style.css
+!script.js
+!favicon.svg
+
+# --- Search / crawlers ---
+!robots.txt
+!sitemap.xml
+
+# --- Logos & brand marks ---
+!logo.png
+!logo2.png
+!logo.webp
+!logo.jpeg
+!logo.pdf
+!logo-transparent.png
+!logo-transparent1.png
+!logo-transparent2.png
+!A3af40cc91c1e439e808d615778998e14D.webp
+!Untitled design.png
+
+# --- Photography (images/ only, by extension) ---
+!images/
+!images/*.jpg
+!images/*.JPG
+!images/*.jpeg
+!images/*.JPEG
+!images/*.png
+!images/*.PNG
+!images/*.webp
+
+# --- Never commit, even if allowed above ---
+# .DS_Store leaks the filenames of everything else in the folder,
+# including the documents this file exists to keep out.
+.DS_Store
+**/.DS_Store
+
+# Local tooling / editor state
+.claude/
+.vscode/
+.idea/
+*.swp
+
+# Secrets — belt and braces; the `*` above already covers these
+.env
+.env.*
+*.pem
+*.key
