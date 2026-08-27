@@ -271,7 +271,10 @@ a { text-decoration: none; color: inherit; }
 /* Footer variant */
 .logo-lockup--footer { gap: 16px; }
 .logo-lockup--footer .logo-seal--full { width: 90px; height: 90px; margin-top: 0; }
-.logo-lockup--footer .logo-seal { border-radius: 50%; }
+/* The seal art is transparent behind its ring, and its rules and lettering
+   are black ink. The footer sits on --black, so give the seal back the
+   white disc it needs; border-radius above clips it to the circle. */
+.logo-lockup--footer .logo-seal { border-radius: 50%; background: #fff; }
 
 .logo-wordmark--footer .logo-name {
   font-size: 20px;
