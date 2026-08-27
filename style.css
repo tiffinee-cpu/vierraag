@@ -1501,9 +1501,14 @@ a { text-decoration: none; color: inherit; }
 
 .footer-nav a:hover { color: var(--gold); }
 
+/* .footer-nap spans grid-column 1 / -1, which pushes this out of the third
+   column it was written for and onto a row of its own in column 1. Span the
+   full width and centre it so it lines up with .footer-nap above, instead of
+   sitting right-aligned inside the narrow first column. */
 .footer-copy {
-  text-align: right;
-  padding-top: 44px;
+  grid-column: 1 / -1;
+  text-align: center;
+  padding-top: 0;
 }
 
 .footer-copy p {
@@ -1633,9 +1638,7 @@ a { text-decoration: none; color: inherit; }
   .contact-inner { grid-template-columns: 1fr; gap: 48px; }
   .ethos-inner { grid-template-columns: 1fr; gap: 48px; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
-  .footer-copy { text-align: left; }
   .footer-nav { align-items: flex-start; padding-top: 0; }
-  .footer-copy { padding-top: 0; }
 
   /* Vineyards */
   .vs-grid { grid-template-columns: 1fr; }
@@ -1712,7 +1715,7 @@ a { text-decoration: none; color: inherit; }
   .form-row { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; }
   .footer-nav { flex-direction: row; flex-wrap: wrap; gap: 12px 24px; }
-  .footer-copy { text-align: left; padding-top: 16px; }
+  .footer-copy { padding-top: 16px; }
   /* Restore wordmark in footer even on mobile */
   .logo-lockup--footer .logo-wordmark { display: flex; }
   .logo-lockup--footer .logo-seal--full { display: block; }
