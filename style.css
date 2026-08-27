@@ -1658,6 +1658,15 @@ a { text-decoration: none; color: inherit; }
   .mobile-menu.open { display: block; }
 
   .section-inner { padding: 0 24px; }
+
+  /* Side padding drops to 24px here, but .reveal-left / .reveal-right park
+     their elements at translateX(28px) - 4px wider than the viewport, which
+     body's overflow-x: hidden masks rather than prevents. The two-column
+     layouts these came from are stacked at this width anyway, so a left/right
+     entrance no longer points at anything: use the same vertical entrance the
+     plain .reveal class uses. The .visible rules still win on specificity. */
+  .reveal-left,
+  .reveal-right { transform: translateY(28px); }
   .nav-inner { padding: 0 24px; }
 
   .hero-content { padding: 0 24px; }
