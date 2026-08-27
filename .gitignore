@@ -1,10 +1,9 @@
-# This repo publishes to stevevierraag.com via Cloudflare Pages.
-# Anything committed here becomes PUBLICLY READABLE at a guessable URL.
+# Allowlist, not a blocklist: ignore everything by default, then permit
+# site files back in explicitly. New files stay invisible to git until
+# deliberately allowed, so nothing ships by accident.
 #
-# The repo root doubles as a working folder holding tax forms, LLC filings,
-# and signed agreements. So the rule is inverted: ignore everything by
-# default, then allow site files back in one at a time. New files are
-# invisible to git until deliberately allowed — it fails closed.
+# NOTE: this file itself is served publicly at /.gitignore — keep the
+# comments here free of anything you would not publish.
 #
 # Adding a new page or image? Add an explicit `!` line for it below.
 
