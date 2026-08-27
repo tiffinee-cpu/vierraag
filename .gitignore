@@ -27,16 +27,11 @@
 !sitemap.xml
 
 # --- Logos & brand marks ---
+# Only marks the site actually serves are allowed through.
+# logo-transparent.png is the seal used by the nav, footer and 404 page.
+# logo.png is referenced by the JSON-LD LocalBusiness logo URL.
 !logo.png
-!logo2.png
-!logo.webp
-!logo.jpeg
-!logo.pdf
 !logo-transparent.png
-!logo-transparent1.png
-!logo-transparent2.png
-!A3af40cc91c1e439e808d615778998e14D.webp
-!Untitled design.png
 
 # --- Photography (images/ only, by extension) ---
 !images/
