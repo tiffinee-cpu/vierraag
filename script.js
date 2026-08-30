@@ -31,9 +31,15 @@ if (hamburger && mobileMenu) {
 }
 
 // --- Smooth scroll for anchor links ---
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href^="#"], a[href^="/#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
-    const target = document.querySelector(this.getAttribute('href'));
+    // Nav links use the root-absolute /#section form so they work from any
+    // page. On the home page the target exists and we scroll to it; elsewhere
+    // querySelector finds nothing and the link navigates home as normal.
+    const href = this.getAttribute('href');
+    const hash = href.slice(href.indexOf('#'));
+    if (hash.length < 2) return;
+    const target = document.querySelector(hash);
     if (target) {
       e.preventDefault();
       const offset = 72; // nav height
