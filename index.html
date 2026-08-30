@@ -26,15 +26,16 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LocalBusiness",
+        "@type": "ProfessionalService",
         "@id": "https://stevevierraag.com/#business",
         "name": "Steve Vierra Agriculture",
         "legalName": "Steve Vierra Agriculture, LLC",
         "url": "https://stevevierraag.com/",
-        "logo": "https://stevevierraag.com/logo.png",
+        "logo": "https://stevevierraag.com/logo-transparent.png",
         "image": "https://stevevierraag.com/images/about-steve.JPG",
-        "description": "Agricultural consulting firm specializing in soil science, vineyard development, and agave cultivation. Certified Professional Soil Scientist (C.P.S.S.) with 30 years of experience across California, New Zealand, Chile, and Australia.",
+        "description": "Agricultural consulting firm specializing in soil science, vineyard development, and agave cultivation. Certified Professional Soil Scientist (C.P.S.S.) with 30 years of experience across California and the American West, with international consulting experience in New Zealand, Chile, and Australia.",
         "foundingDate": "1997",
+        "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Paso Robles",
@@ -48,17 +49,16 @@
         },
         "telephone": "+18053913865",
         "email": "steve@stevevierraag.com",
+        "founder": { "@id": "https://stevevierraag.com/#person" },
         "sameAs": [
-          "https://www.instagram.com/stevevierracpss"
+          "https://www.instagram.com/stevevierracpss",
+          "https://www.linkedin.com/in/steve-vierra-4b765328/"
         ],
         "areaServed": [
-          "Paso Robles, CA",
-          "San Luis Obispo County, CA",
-          "Central Coast, CA",
-          "California",
-          "New Zealand",
-          "Chile",
-          "Australia"
+          { "@type": "State", "name": "California" },
+          { "@type": "State", "name": "Arizona" },
+          { "@type": "State", "name": "Colorado" },
+          { "@type": "State", "name": "Texas" }
         ],
         "serviceType": [
           "Vineyard Consulting",
@@ -73,7 +73,18 @@
           "Distillery Agave Sourcing",
           "Crop Diversification Consulting"
         ],
-        "hasCredential": "Certified Professional Soil Scientist (C.P.S.S.)"
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Agricultural Consulting Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vineyard Consulting & Development" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Agave Cultivation & California Spirits Farming" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Soil Science & Health Analysis" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Agricultural Land Evaluation & Williamson Act Consulting" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vineyard Diversification Consulting" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Arid & Dryland Agriculture Consulting" } }
+          ]
+        }
       },
       {
         "@type": "Person",
@@ -85,7 +96,8 @@
         "url": "https://stevevierraag.com/",
         "image": "https://stevevierraag.com/images/about-steve.JPG",
         "sameAs": [
-          "https://www.instagram.com/stevevierracpss"
+          "https://www.instagram.com/stevevierracpss",
+          "https://www.linkedin.com/in/steve-vierra-4b765328/"
         ],
         "alumniOf": {
           "@type": "CollegeOrUniversity",
@@ -101,36 +113,17 @@
           "Dryland Farming",
           "Irrigation Design",
           "Crop Management",
-          "Paso Robles AVA"
+          "Paso Robles AVA",
+          "New Zealand Viticulture",
+          "Chilean Viticulture",
+          "Australian Viticulture"
         ],
-        "description": "Steve Vierra is a Certified Professional Soil Scientist (C.P.S.S.) with over 30 years of agricultural consulting experience. He founded Steve Vierra Agriculture in 1997 and specializes in vineyard consulting, agave cultivation, and arid land agriculture across California and internationally."
-      },
-      {
-        "@type": "ProfessionalService",
-        "@id": "https://stevevierraag.com/#service",
-        "name": "Steve Vierra Agriculture",
-        "url": "https://stevevierraag.com/",
-        "telephone": "+18053913865",
-        "email": "steve@stevevierraag.com",
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Paso Robles",
-          "addressRegion": "CA",
-          "addressCountry": "US"
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Certified Professional Soil Scientist (C.P.S.S.)",
+          "credentialCategory": "Professional Certification"
         },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Agricultural Consulting Services",
-          "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vineyard Consulting & Development" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Agave Cultivation & California Spirits Farming" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Soil Science & Health Analysis" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Agricultural Land Evaluation & Williamson Act Consulting" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vineyard Diversification Consulting" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Arid & Dryland Agriculture Consulting" } }
-          ]
-        }
+        "description": "Steve Vierra is a Certified Professional Soil Scientist (C.P.S.S.) with over 30 years of agricultural consulting experience. He founded Steve Vierra Agriculture in 1997 and specializes in vineyard consulting, agave cultivation, and arid land agriculture across California and internationally."
       },
       {
         "@type": "FAQPage",
@@ -182,6 +175,14 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Steve has consulted on projects ranging from a few acres to thousands of acres. Whether you're evaluating a small parcel for the first time or managing a large multi-property operation, the science is the same — and every landowner deserves an honest assessment of what their land can do. No project is too small to start a conversation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I start working with Steve?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The first step is a no-obligation conversation about your land, your goals, and your challenges. Use the contact form below, call 805-391-3865, or email steve@stevevierraag.com to schedule an initial consultation."
             }
           }
         ]
